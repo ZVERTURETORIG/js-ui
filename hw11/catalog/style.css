@@ -1,0 +1,73 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f4f5f7;
+  color: #222;
+  font-family: Arial, sans-serif;
+}
+
+.page {
+  width: min(100% - 32px, 1000px);
+  margin: 32px auto;
+}
+
+.filters {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+label {
+  display: grid;
+  gap: 6px;
+}
+
+input,
+select {
+  min-width: 220px;
+  padding: 9px;
+  font: inherit;
+}
+
+#message {
+  min-height: 24px;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  overflow: hidden;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.card img {
+  display: block;
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  background: #fff;
+}
+
+.card h2 {
+  font-size: 18px;
+}
+
+.price {
+  font-weight: bold;
+}
+
+@media (max-width: 560px) {
+  .filters {
+    flex-direction: column;
+  }
+}
