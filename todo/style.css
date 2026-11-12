@@ -47,6 +47,7 @@ button { cursor: pointer; }
 
 .task-title { flex: 1; }
 .task.completed .task-title { text-decoration: line-through; color: #777; }
+.task-date { color: #777; font-size: 12px; }
 
 .delete-button {
   border: 0;

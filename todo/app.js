@@ -33,6 +33,10 @@ function render() {
     title.className = "task-title";
     title.textContent = task.title;
 
+    const date = document.createElement("small");
+    date.className = "task-date";
+    date.textContent = new Date(task.createdAt).toLocaleDateString("ru-RU");
+
     const deleteButton = document.createElement("button");
     deleteButton.className = "delete-button";
     deleteButton.type = "button";
@@ -43,7 +47,7 @@ function render() {
       render();
     });
 
-    item.append(checkbox, title, deleteButton);
+    item.append(checkbox, title, date, deleteButton);
     taskList.append(item);
   });
 }
