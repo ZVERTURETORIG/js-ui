@@ -1,5 +1,5 @@
 import { createTask, getVisibleTasks, removeTask, toggleTask } from "./tasks.js";
-import { loadTasks, saveTasks } from "./storage.js";
+import { loadFilter, loadTasks, saveFilter, saveTasks } from "./storage.js";
 
 const taskForm = document.querySelector("#taskForm");
 const taskInput = document.querySelector("#taskInput");
@@ -8,7 +8,8 @@ const taskList = document.querySelector("#taskList");
 const emptyMessage = document.querySelector("#emptyMessage");
 
 let tasks = loadTasks();
-let filter = "all";
+let filter = loadFilter();
+filterSelect.value = filter;
 
 function render() {
   taskList.replaceChildren();
@@ -68,6 +69,7 @@ taskForm.addEventListener("submit", (event) => {
 
 filterSelect.addEventListener("change", () => {
   filter = filterSelect.value;
+  saveFilter(filter);
   render();
 });
 
