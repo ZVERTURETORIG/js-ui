@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Курс тенге</title>
+  <style>
+    body { max-width: 640px; margin: 40px auto; padding: 0 20px; font-family: Arial, sans-serif; color: #20252b; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { border: 1px solid #d7dce2; padding: 10px; text-align: left; }
+    th { background: #eef2f6; }
+    button { padding: 9px 14px; cursor: pointer; }
+    #status.error { color: #b42318; }
+  </style>
+</head>
+<body>
+  <h1>Курс тенге</h1>
+  <button id="refreshButton" type="button">Обновить</button>
+  <p id="status" aria-live="polite">Загрузка…</p>
+  <p id="updated"></p>
+  <table>
+    <thead>
+      <tr><th>Валюта</th><th>За 1 единицу</th></tr>
+    </thead>
+    <tbody id="ratesTable"></tbody>
+  </table>
+  <p><a href="https://www.exchangerate-api.com" target="_blank" rel="noopener noreferrer">Rates By Exchange Rate API</a></p>
+  <script type="module" src="./rates.js"></script>
+</body>
+</html>
